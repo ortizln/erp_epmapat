@@ -33,7 +33,6 @@ public interface ClientesR extends JpaRepository<Clientes, Long> {
 	@Query(value = "SELECT * FROM clientes AS c WHERE LOWER(c.nombre) LIKE %?1% order by nombre", nativeQuery = true)
 	List<Clientes> findByNombre(String nombre);
 
-	@Transactional
 	@Modifying(clearAutomatically = true)
 	@Query(value = "DELETE FROM clientes AS c WHERE NOT EXISTS(SELECT * FROM abonados AS a WHERE a.idcliente_clientes=c.idcliente)AND c.idcliente=?1 ", nativeQuery = true)
 	void deleteByIdQ(Long id);
