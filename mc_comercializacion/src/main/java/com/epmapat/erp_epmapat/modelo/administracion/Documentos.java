@@ -3,10 +3,17 @@ package com.epmapat.erp_epmapat.modelo.administracion;
 import java.time.ZonedDateTime;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "documentos")
-
 public class Documentos {
 
 	@Id
