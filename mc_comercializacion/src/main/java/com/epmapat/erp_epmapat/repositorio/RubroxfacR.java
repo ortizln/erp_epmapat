@@ -7,7 +7,6 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
@@ -24,9 +23,9 @@ public interface RubroxfacR extends JpaRepository<Rubroxfac, Long> {
 	// public List<Rubroxfac> findByFactura(Long nrofactura);
 
 	// Campos específicos: Rubro y Valor de una Factura (Planilla)
-	@Query("SELECT new map(" +
+	@Query(value = "SELECT new map(" +
 			"r.descripcion as descripcion, " + "rf.valorunitario as valorunitario) " +
-			"FROM Rubroxfac rf INNER JOIN Rubros r ON r.idrubro = rf.idrubro_rubros WHERE rf.idfactura_facturas=?1 order by rf.idrubro_rubros")
+			"FROM Rubroxfac rf INNER JOIN Rubros r ON r.idrubro = rf.idrubro_rubros WHERE rf.idfactura_facturas=?1 order by rf.idrubro_rubros", nativeQuery = true)
 	List<Map<String, Object>> rubrosByIdfactura(Long idfactura);
 
 	@Query(value = "select sum(valorunitario)  from rubroxfac r where idfactura_facturas = ?1", nativeQuery = true)
@@ -81,7 +80,7 @@ public interface RubroxfacR extends JpaRepository<Rubroxfac, Long> {
 	@Query(value = "SELECT EXISTS (SELECT 1 FROM Rubroxfac WHERE idrubro_rubros = 6 and idfactura_facturas = ?1)", nativeQuery = true)
 	boolean findMulta(Long idfactura);
 
-	@Query("SELECT r.idrubro, r.descripcion, SUM(rf.cantidad * rf.valorunitario) AS total FROM Rubroxfac rf INNER JOIN rf.idrubro_rubros r GROUP BY r.idrubro, r.descripcion")
+	@Query(value = "SELECT r.idrubro, r.descripcion, SUM(rf.cantidad * rf.valorunitario) AS total FROM Rubroxfac rf INNER JOIN rf.idrubro_rubros r GROUP BY r.idrubro, r.descripcion", nativeQuery = true)
 	List<Object[]> findRubroTotalByRubroxfac();
 
 	// Recaudcion diaria - Total por Rubro (Todas)
