@@ -11,7 +11,7 @@ spring:
     hibernate:
       ddl-auto: none # Recommended for production
   datasource:
-    url: jdbc:postgresql://localhost:5432/erp_epmapat
+    url: jdbc:postgresql://localhost:5432/ErpEpmapaT
     username: postgres
     password: 12345
     driver-class-name: org.postgresql.Driver
