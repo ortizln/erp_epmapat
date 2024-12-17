@@ -9,7 +9,6 @@ import org.springframework.format.annotation.DateTimeFormat.ISO;
 
 @Entity
 @Table(name = "ptoemision")
-
 public class PtoEmisionM {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
