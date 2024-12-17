@@ -17,11 +17,10 @@ public class CategoriaServicio {
 	@Autowired
 	private CategoriaR dao;
 
-	//Categorias habilitadas
+	// Categorias habilitadas
 	public List<String> listaCategorias() {
 		return dao.listaCategorias();
-	 }
-
+	}
 
 	@SuppressWarnings("null")
 	public List<Categorias> findAll(Sort sort) {
@@ -50,7 +49,7 @@ public class CategoriaServicio {
 		return dao.findByDescri(descripcion);
 	}
 
-	//Suma totaltarifa
+	// Suma totaltarifa
 	public BigDecimal sumTotalTarifa() {
 		return dao.sumTotalTarifa();
 	}
