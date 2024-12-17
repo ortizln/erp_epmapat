@@ -3,9 +3,6 @@ package com.epmapat.erp_epmapat.repositorio;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Map;
-
-import javax.transaction.Transactional;
-
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
@@ -17,7 +14,7 @@ import com.epmapat.erp_epmapat.modelo.Clientes;
 public interface ClientesR extends JpaRepository<Clientes, Long> {
 
 	// Clientes por Nombre o Identificacion
-	@Query(value = "select * from clientes WHERE LOWER(nombre) LIKE %?1% OR cedula LIKE %?1% ORDER BY nombre", nativeQuery = true)
+	@Query(value = "select * from clientes c WHERE LOWER(c.nombre) LIKE %?1% OR c.cedula LIKE %?1% ORDER BY c.nombre", nativeQuery = true)
 	List<Clientes> findByNombreIdentifi(String nombreIdentifi);
 
 	// Valida Identificación del Cliente

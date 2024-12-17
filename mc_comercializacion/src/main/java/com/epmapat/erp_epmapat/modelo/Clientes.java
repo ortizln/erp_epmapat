@@ -6,24 +6,18 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(name ="clientes")
-
 public class Clientes {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idcliente;
 	private String cedula;
-
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "idtpidentifica_tpidentifica")
 	private Tpidentifica idtpidentifica_tpidentifica;
-	
 	private String nombre;
 	private String direccion; 
 	private String telefono;
-/* 	@Temporal(TemporalType.DATE)
-	@DateTimeFormat(iso = ISO.DATE)
-	@Column(name ="fechanacimiento") */
 	private LocalDate fechanacimiento;
 	private Long discapacitado;
 	private Long porcdiscapacidad;
