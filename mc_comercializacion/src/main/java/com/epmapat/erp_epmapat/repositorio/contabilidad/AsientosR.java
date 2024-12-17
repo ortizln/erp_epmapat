@@ -4,8 +4,6 @@ import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 
-import javax.transaction.Transactional;
-
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
@@ -69,7 +67,6 @@ public interface AsientosR extends JpaRepository<Asientos, Long> {
 			@Param("idasiento") Long idasiento);
 
 	@Modifying
-	@Transactional
 	@Query("UPDATE Asientos a SET a.totdeb = :totdeb, a.totcre = :totcre WHERE a.idasiento = :idasiento")
 	void updateTotdebAndTotcre(@Param("totdeb") BigDecimal totdeb, @Param("totcre") BigDecimal totcre,
 			@Param("idasiento") Long idasiento);
