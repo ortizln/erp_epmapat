@@ -10,6 +10,5 @@ spring:
         show-sql: true
     datasource:
         url: jdbc:postgresql://localhost:5432/ErpEpmapaT
-        username: postgre
+        username: postgres
         password: 12345
-        driverClassName: org.postgresql.Driver
