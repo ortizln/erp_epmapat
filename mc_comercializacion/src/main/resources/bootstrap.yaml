@@ -5,3 +5,11 @@ spring:
         config:
             enabled: true
             uri: http://localhost:8081
+    jpa:
+        database: POSTGRESQL
+        show-sql: true
+    datasource:
+        url: jdbc:postgresql://localhost:5432/erp_epmapat
+        username: postgresql
+        password: 12345
+        driverClassName: org.postgresql.Driver
