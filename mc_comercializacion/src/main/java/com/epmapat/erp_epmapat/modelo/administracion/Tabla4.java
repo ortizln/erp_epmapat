@@ -3,7 +3,7 @@ package com.epmapat.erp_epmapat.modelo.administracion;
 import java.io.Serializable;
 import java.util.Date;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.format.annotation.DateTimeFormat.ISO;

@@ -2,7 +2,7 @@ package com.epmapat.erp_epmapat.modelo.contabilidad;
 
 import java.util.Date;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.format.annotation.DateTimeFormat.ISO;

@@ -3,7 +3,7 @@ package com.epmapat.erp_epmapat.modelo.contabilidad;
 import java.math.BigDecimal;
 import java.time.ZonedDateTime;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 import com.epmapat.erp_epmapat.modelo.administracion.Documentos;
 

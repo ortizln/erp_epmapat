@@ -2,7 +2,7 @@ package com.epmapat.erp_epmapat.modelo.contabilidad;
 
 import java.time.ZonedDateTime;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 import com.epmapat.erp_epmapat.modelo.Clasificador;
 

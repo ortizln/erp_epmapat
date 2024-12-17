@@ -2,7 +2,9 @@ package com.epmapat.erp_epmapat.modelo;
 
 import java.time.LocalDate;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
+
+import jakarta.persistence.Entity;
 
 
 @Entity

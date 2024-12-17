@@ -1,6 +1,6 @@
 package com.epmapat.erp_epmapat.modelo.contabilidad;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "ifinan")

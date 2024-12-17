@@ -2,7 +2,7 @@ package com.epmapat.erp_epmapat.modelo.contabilidad;
 
 import java.math.BigDecimal;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name="conciliaban")

@@ -1,6 +1,6 @@
 package com.epmapat.erp_epmapat.modelo;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "aboxsuspension")
