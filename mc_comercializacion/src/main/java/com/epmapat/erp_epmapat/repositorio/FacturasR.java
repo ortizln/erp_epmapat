@@ -10,8 +10,6 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
 import com.epmapat.erp_epmapat.modelo.Facturas;
-
-// @Repository
 public interface FacturasR extends JpaRepository<Facturas, Long> {
 
 	// VALIDACION DE LA ULTIMA FACTURA DEL RECAUDADOR
@@ -46,7 +44,7 @@ public interface FacturasR extends JpaRepository<Facturas, Long> {
 	public List<Facturas> findByIdfactura(Long idfactura);
 
 	// Planillas por Abonado y Fecha
-	@Query("SELECT f FROM Facturas f WHERE f.idabonado = :idabonado AND f.feccrea BETWEEN :fechaDesde AND :fechaHasta AND totaltarifa > 0 order by feccrea desc")
+	@Query(value = "SELECT f FROM Facturas f WHERE f.idabonado = :idabonado AND f.feccrea BETWEEN :fechaDesde AND :fechaHasta AND totaltarifa > 0 order by feccrea desc", nativeQuery = true)
 	List<Facturas> findByAbonadoAndFechaCreacionRange(@Param("idabonado") Long idabonado,
 			@Param("fechaDesde") LocalDate fechaDesde, @Param("fechaHasta") LocalDate fechaHasta);
 
@@ -130,7 +128,6 @@ public interface FacturasR extends JpaRepository<Facturas, Long> {
 			+ "WHERE date(f.fechacobro) = ?1 " + "AND (f.estado = 1 OR f.estado = 2) "
 			+ "AND f.fechaeliminacion IS NULL " + "AND rf.idrubro_rubros != 165 "
 			+ "GROUP BY f.idfactura ORDER BY f.nrofactura",
-
 			nativeQuery = true)
 	List<RepFacGlobal> findByFechacobroTot(LocalDate fecha);
 
@@ -200,7 +197,7 @@ public interface FacturasR extends JpaRepository<Facturas, Long> {
 			@Param("d_fecha") LocalDate h_fecha, @Param("recaudador") Long idrecaudador);
 
 	// Cuenta las Facturas pendientes de un Abonado
-	@Query("SELECT COUNT(*) FROM Facturas f WHERE f.totaltarifa > 0 and f.idabonado=?1 and (( (f.estado = 1 or f.estado = 2) and f.fechacobro is null) or f.estado = 3 ) AND f.fechaeliminacion IS NULL and fechaconvenio is null")
+	@Query(value = "SELECT COUNT(*) FROM Facturas f WHERE f.totaltarifa > 0 and f.idabonado=?1 and (( (f.estado = 1 or f.estado = 2) and f.fechacobro is null) or f.estado = 3 ) AND f.fechaeliminacion IS NULL and fechaconvenio is null", nativeQuery = true)
 	long countFacturasByAbonadoAndPendientes(@Param("idabonado") Long idabonado);
 
 	// Listado de facturas anuladas
@@ -291,27 +288,27 @@ public interface FacturasR extends JpaRepository<Facturas, Long> {
 " c.nombre ASC;", nativeQuery = true)
 public List<CarteraVencidaFacturas> getCVByFacturasConsumo(LocalDate fecha);
 
-@Query (value = "SELECT" + //
-		"    rf.idfactura_facturas as factura," + //
-		"    c.nombre," + //
-		"    m.descripcion as modulo," + //
-		"    SUM(rf.cantidad * rf.valorunitario) AS total, " + //
-		"    f.idabonado as cuenta " + //
-		" FROM" + //
-		"    rubroxfac rf" + //
-		" JOIN facturas f ON rf.idfactura_facturas = f.idfactura" + //
-		" JOIN rubros r ON rf.idrubro_rubros = r.idrubro" + //
-		" JOIN clientes c ON f.idcliente = c.idcliente" + //
-		" JOIN modulos m ON f.idmodulo = m.idmodulo" + //
-		" WHERE" + //
-		"    f.totaltarifa > 0" + //
+@Query (value = "SELECT" + 
+		"    rf.idfactura_facturas as factura," + 
+		"    c.nombre," + 
+		"    m.descripcion as modulo," + 
+		"    SUM(rf.cantidad * rf.valorunitario) AS total, " + 
+		"    f.idabonado as cuenta " + 
+		" FROM" + 
+		"    rubroxfac rf" + 
+		" JOIN facturas f ON rf.idfactura_facturas = f.idfactura" + 
+		" JOIN rubros r ON rf.idrubro_rubros = r.idrubro" + 
+		" JOIN clientes c ON f.idcliente = c.idcliente" + 
+		" JOIN modulos m ON f.idmodulo = m.idmodulo" + 
+		" WHERE" + 
+		"    f.totaltarifa > 0" + 
 		"    AND ((f.estado = 1 OR f.estado = 2) AND (f.fechacobro > ?1 OR f.fechacobro IS NULL ) or f.estado = 3)" +
-		"    and not ( (f.idmodulo = 3 and f.idabonado > 0) or f.idmodulo = 4 )" + //
-		"    AND f.fechaconvenio IS NULL" + //
-		"    AND f.fechaeliminacion IS NULL" + //
-		" GROUP BY" + //
-		"     rf.idfactura_facturas, c.nombre, m.descripcion, f.idabonado  " + //
-		" ORDER BY" + //
+		"    and not ( (f.idmodulo = 3 and f.idabonado > 0) or f.idmodulo = 4 )" + 
+		"    AND f.fechaconvenio IS NULL" + 
+		"    AND f.fechaeliminacion IS NULL" + 
+		" GROUP BY" + 
+		"     rf.idfactura_facturas, c.nombre, m.descripcion, f.idabonado  " + 
+		" ORDER BY" + 
 		" c.nombre ASC;", nativeQuery = true)
 public List<CVFacturasNoConsumo> getCVByFacturasNoConsumo(LocalDate fecha);
 
