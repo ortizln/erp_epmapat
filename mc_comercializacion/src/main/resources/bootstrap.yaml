@@ -1,15 +1,17 @@
-spring: 
-    application: 
-        name: mc_comercializacion
-    cloud: 
-        config:
-            enabled: true
-            uri: http://localhost:8081
-    jpa:
-        database: POSTGRESQL
-        show-sql: true
-    datasource:
-        url: jdbc:postgresql://localhost:5432/erp_epmapat
-        username: postgresql
-        password: 12345
-        driverClassName: org.postgresql.Driver
+spring:
+  application:
+    name: mc_comercializacion
+  cloud:
+    config:
+      enabled: true
+      uri: http://localhost:8081
+  jpa:
+    database: POSTGRESQL
+    show-sql: true
+    hibernate:
+      ddl-auto: none # Recommended for production
+  datasource:
+    url: jdbc:postgresql://localhost:5432/erp_epmapat
+    username: postgresql
+    password: 12345
+    driver-class-name: org.postgresql.Driver
