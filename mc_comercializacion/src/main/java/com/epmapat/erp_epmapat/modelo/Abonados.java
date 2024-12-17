@@ -4,9 +4,6 @@ import java.time.LocalDate;
 
 import jakarta.persistence.*;
 
-import jakarta.persistence.Entity;
-
-
 @Entity
 @Table(name = "abonados")
 
