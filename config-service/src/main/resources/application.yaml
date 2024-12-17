@@ -5,7 +5,7 @@ spring:
     config:
       server:
         git:
-          default-label: main
+          default-label: master
           uri: https://github.com/ortizln/erp_epmapat
           search-paths: config-data
   application:
