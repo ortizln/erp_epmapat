@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: mc_eureka
+  cloud:
+    config:
+      enabled: true
+      uri: http://localhost:8080
+  jpa:
+    database: POSTGRESQL
+    show-sql: true
+  datasource:
+    url: jdbc:postgresql://localhost:5432/ErpEpmapaT
+    username: postgres
+    password: 12345
