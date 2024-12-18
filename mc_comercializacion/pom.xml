@@ -13,8 +13,21 @@
 	<artifactId>comercializacion</artifactId>
 	<version>api</version>
 	<!--<packaging>war</packaging>-->
-	<name>erp_epmapat</name>
-	<description>ERP de la EPMAPAT</description>
+	<name>comercializacion</name>
+	<description>Microservicio comercializacion</description>
+		<url/>
+	<licenses>
+		<license/>
+	</licenses>
+	<developers>
+		<developer/>
+	</developers>
+	<scm>
+		<connection/>
+		<developerConnection/>
+		<tag/>
+		<url/>
+	</scm>
 	<properties>
 		<java.version>17</java.version>
 		<spring-cloud.version>2024.0.0</spring-cloud.version>
@@ -67,7 +80,6 @@
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-bootstrap</artifactId>
-			<version>4.2.0</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
