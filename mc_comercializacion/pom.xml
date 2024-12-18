@@ -12,7 +12,6 @@
 	<groupId>com.epmapat</groupId>
 	<artifactId>comercializacion</artifactId>
 	<version>api</version>
-	<!--<packaging>war</packaging>-->
 	<name>comercializacion</name>
 	<description>Microservicio comercializacion</description>
 	<properties>
@@ -67,6 +66,7 @@
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-bootstrap</artifactId>
+			<version>4.2.0</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
