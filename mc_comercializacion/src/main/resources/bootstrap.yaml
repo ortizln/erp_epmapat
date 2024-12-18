@@ -3,13 +3,11 @@ spring:
         name: mc_comercializacion
     cloud:
         config:
-            enabled: false
+            enabled: true
             uri: http://localhost:8080
     jpa:
         database: POSTGRESQL
         show-sql: false
-        hibernate:
-            ddl-auto: none # Recommended for production
     datasource:
         url: jdbc:postgresql://localhost:5432/ErpEpmapaT
         username: postgres
