@@ -10,10 +10,4 @@ public class ErpEpmapatApplication extends SpringBootServletInitializer {
 	public static void main(String[] args) {
 		SpringApplication.run(ErpEpmapatApplication.class, args);
 	}
-
-	@Override
-	protected SpringApplicationBuilder configure(SpringApplicationBuilder aplication) {
-		return aplication.sources(ErpEpmapatApplication.class);
-	}
-
 }
