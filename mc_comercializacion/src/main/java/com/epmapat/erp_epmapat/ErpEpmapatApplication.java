@@ -4,9 +4,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ComercializacionApplication {
+public class ErpEpmapatApplication {
 	public static void main(String[] args) {
-		SpringApplication.run(ComercializacionApplication.class, args);
+		SpringApplication.run(ErpEpmapatApplication.class, args);
 	}
 
 }
