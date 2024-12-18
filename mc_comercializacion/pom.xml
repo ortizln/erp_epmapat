@@ -17,7 +17,7 @@
 	<description>ERP de la EPMAPAT</description>
 	<properties>
 		<java.version>17</java.version>
-		<spring-cloud.verdsion>2020.0.3</spring-cloud.verdsion>
+		<spring-cloud.verdsion>2024.0.1</spring-cloud.verdsion>
 	</properties>
 	<dependencies>
 		<dependency>
