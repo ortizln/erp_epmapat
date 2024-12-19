@@ -17,7 +17,7 @@ import org.springframework.web.client.RestTemplate;
 public class RecaudacionMicroservice {
 	@Autowired
 	private RestTemplate restTemplate;
-	String mcrecaudacion = "mc_recaudacion";
+	String mcrecaudacion = "localhost:mc_recaudacion";
 	private final String URL_FACTURA = "http://"+mcrecaudacion+"/facturas";
 	private final String URL_CAJA = "http://"+mcrecaudacion+"/cajas";
 	private final String URL_INTERES = "http://"+mcrecaudacion+"/interes";
