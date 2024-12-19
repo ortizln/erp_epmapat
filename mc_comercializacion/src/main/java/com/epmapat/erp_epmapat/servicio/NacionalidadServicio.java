@@ -21,19 +21,6 @@ import org.springframework.util.ResourceUtils;
 import com.epmapat.erp_epmapat.modelo.Nacionalidad;
 import com.epmapat.erp_epmapat.repositorio.NacionalidadR;
 
-import net.sf.jasperreports.engine.JRException;
-import net.sf.jasperreports.engine.JasperCompileManager;
-import net.sf.jasperreports.engine.JasperExportManager;
-import net.sf.jasperreports.engine.JasperFillManager;
-import net.sf.jasperreports.engine.JasperPrint;
-import net.sf.jasperreports.engine.JasperReport;
-import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
-import net.sf.jasperreports.engine.export.JRPdfExporter;
-import net.sf.jasperreports.export.SimpleExporterInput;
-import net.sf.jasperreports.export.SimpleOutputStreamExporterOutput;
-import net.sf.jasperreports.export.SimplePdfExporterConfiguration;
-import net.sf.jasperreports.export.SimplePdfReportConfiguration;
-
 @Service
 public class NacionalidadServicio implements NacionalidadR {
 
@@ -227,23 +214,6 @@ public class NacionalidadServicio implements NacionalidadR {
 	public List<Nacionalidad> findByDescription(String nombre) {
 		return dao.findByDescription(nombre);
 	}
-
-	public String exportNacionalidades(String format) throws FileNotFoundException, JRException {
-		List<Nacionalidad> nacionalidad = dao.findAll();
-		String path = "C://reportes//";
-		File file = ResourceUtils.getFile("classpath:nacionalidades.jrxml");
-		JasperReport jasper = JasperCompileManager.compileReport(file.getAbsolutePath());
-		JRBeanCollectionDataSource ds = new JRBeanCollectionDataSource(nacionalidad);
-		Map<String, Object> parameters = new HashMap<String, Object>();
-		parameters.put("Key_nacionalidades", "knowledge");
-		JasperPrint jasperPrint = JasperFillManager.fillReport(jasper, parameters, ds);
-		if (format.equalsIgnoreCase("html")) {
-			JasperExportManager.exportReportToHtmlFile(jasperPrint, path + "//nacionalidades.html");
-		}
-		if (format.equalsIgnoreCase("pdf")) {
-			JasperExportManager.exportReportToPdfFile(jasperPrint, path + "//nacionalidades.pdf");
-		}
-		return "path: " + path;
-	}
+	
 
 }
