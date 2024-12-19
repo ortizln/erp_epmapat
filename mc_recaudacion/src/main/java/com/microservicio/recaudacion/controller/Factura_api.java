@@ -16,6 +16,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/facturas")
+@CrossOrigin("*")
 public class Factura_api {
     @Autowired
     private Cliente_ser s_cliente;
