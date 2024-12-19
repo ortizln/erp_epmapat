@@ -5,6 +5,9 @@ spring:
         config:
             enabled: true
             uri: http://localhost:8080
+        loadbalancer:
+            hint:
+                mc_recaudacion: custom
     jpa:
         database: POSTGRESQL
         show-sql: false
