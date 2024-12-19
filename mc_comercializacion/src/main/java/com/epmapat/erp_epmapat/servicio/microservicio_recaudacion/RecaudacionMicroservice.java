@@ -13,14 +13,10 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
 
-import com.epmapat.erp_epmapat.config.MicroserviceConfig;
-
 @Service
 public class RecaudacionMicroservice {
 	@Autowired
 	private RestTemplate restTemplate;
-	@Autowired
-	private MicroserviceConfig config;
 	String mcrecaudacion = "mc_recaudacion";
 	private final String URL_FACTURA = "http://"+mcrecaudacion+"/facturas";
 	private final String URL_CAJA = "http://"+mcrecaudacion+"/cajas";
