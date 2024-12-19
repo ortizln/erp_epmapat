@@ -10,6 +10,7 @@ import lombok.*;
 @Getter
 @Setter
 @NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "abonados")
 public class Abonados {
 

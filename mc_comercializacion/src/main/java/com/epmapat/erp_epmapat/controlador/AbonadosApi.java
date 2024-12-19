@@ -27,7 +27,6 @@ import com.epmapat.erp_epmapat.servicio.AbonadoServicio;
 @RestController
 @RequestMapping("/abonados")
 @CrossOrigin(origins = "*")
-
 public class AbonadosApi {
 
 	@Autowired
