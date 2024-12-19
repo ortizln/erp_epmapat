@@ -17,11 +17,11 @@ import org.springframework.web.client.RestTemplate;
 public class RecaudacionMicroservice {
 	@Autowired
 	private RestTemplate restTemplate;
-	String mcrecaudacion = "localhost:mc_recaudacion:"+8082;
-	private final String URL_FACTURA = "http://"+mcrecaudacion+"/facturas";
-	private final String URL_CAJA = "http://"+mcrecaudacion+"/cajas";
-	private final String URL_INTERES = "http://"+mcrecaudacion+"/interes";
-	private final String URL_IMPUESTOS = "http://"+mcrecaudacion+"/impuestos";
+	private final String mcrecaudacion = "mc_recaudacion:"+8082;
+	public String URL_FACTURA = "http://"+mcrecaudacion+"/facturas";
+	public String URL_CAJA = "http://"+mcrecaudacion+"/cajas";
+	public String URL_INTERES = "http://"+mcrecaudacion+"/interes";
+	public String URL_IMPUESTOS = "http://"+mcrecaudacion+"/impuestos";
 
 	/* RECAUDACION MICROSERVICE */
 	public List<Object> sinCobrarByCuenta(Long cuenta) {
