@@ -214,6 +214,6 @@ public class NacionalidadServicio implements NacionalidadR {
 	public List<Nacionalidad> findByDescription(String nombre) {
 		return dao.findByDescription(nombre);
 	}
-	
+
 
 }
