@@ -21,8 +21,6 @@ import com.epmapat.erp_epmapat.excepciones.ResourceNotFoundExcepciones;
 import com.epmapat.erp_epmapat.modelo.Nacionalidad;
 import com.epmapat.erp_epmapat.servicio.NacionalidadServicio;
 
-import net.sf.jasperreports.engine.JRException;
-
 import org.springframework.http.HttpStatus;
 import org.springframework.data.domain.Sort;
 
@@ -90,11 +88,6 @@ public class NacionalidadApi {
         nacService.deleteById(idnacionalidad);
         return ResponseEntity.ok(!(nacService.findById(idnacionalidad) != null));
 
-    }
-
-    @GetMapping("/export/{format}")
-    private String exportReport(@PathVariable String format) throws FileNotFoundException, JRException {
-        return nacService.exportNacionalidades(format);
     }
 
 }
