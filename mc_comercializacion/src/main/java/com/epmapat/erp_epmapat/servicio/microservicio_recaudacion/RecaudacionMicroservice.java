@@ -19,10 +19,10 @@ public class RecaudacionMicroservice {
 	@Autowired
 	private RestTemplate restTemplate;
 	String mcrecaudacion = "mc_recaudacion";
-	private final String URL_FACTURA = "http://localhost:8082/facturas";
-	private final String URL_CAJA = "http://localhost:8082/cajas";
-	private final String URL_INTERES = "http://localhost:8082/interes";
-	private final String URL_IMPUESTOS = "http://localhost:8082/impuestos";
+	private final String URL_FACTURA = "http://"+mcrecaudacion+"/facturas";
+	private final String URL_CAJA = "http://"+mcrecaudacion+"/cajas";
+	private final String URL_INTERES = "http://"+mcrecaudacion+"/interes";
+	private final String URL_IMPUESTOS = "http://"+mcrecaudacion+"/impuestos";
 
 	/* RECAUDACION MICROSERVICE */
 	public List<Object> sinCobrarByCuenta(Long cuenta) {
