@@ -2,6 +2,7 @@ package com.epmapat.erp_epmapat.modelo;
 
 import java.time.LocalDate;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 
 @Entity
@@ -12,6 +13,7 @@ public class Clientes {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idcliente;
 	private String cedula;
+	@JsonManagedReference
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "idtpidentifica_tpidentifica")
 	private Tpidentifica idtpidentifica_tpidentifica;
@@ -25,6 +27,7 @@ public class Clientes {
 	private Long estado;
 	private String email;
 	private Long usucrea;
+	@JsonManagedReference
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name ="idnacionalidad_nacionalidad")
 	private Nacionalidad idnacionalidad_nacionalidad;
@@ -37,6 +40,7 @@ public class Clientes {
 	@DateTimeFormat(iso = ISO.DATE)
 	@Column(name ="fecmodi") */
 	private LocalDate fecmodi;
+	@JsonManagedReference
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name ="idpjuridica_personeriajuridica")
 	private PersonJuridica idpjuridica_personeriajuridica;
