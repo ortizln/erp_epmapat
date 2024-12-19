@@ -3,6 +3,7 @@ package com.epmapat.erp_epmapat.servicio.microservicio_recaudacion;
 import java.math.BigDecimal;
 import java.util.List;
 
+import com.epmapat.erp_epmapat.config.RestTemplateConfig;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
@@ -16,14 +17,12 @@ import org.springframework.web.client.RestTemplate;
 @Service
 public class RecaudacionMicroservice {
 	@Autowired
-	private RestTemplate restTemplate;
+	private RestTemplateConfig restTemplate;
 	String mcrecaudacion = "mc_recaudacion";
 	private final String URL_FACTURA = "http://localhost:8082/facturas";
 	private final String URL_CAJA = "http://localhost:8082/cajas";
 	private final String URL_INTERES = "http://localhost:8082/interes";
 	private final String URL_IMPUESTOS = "http://localhost:8082/impuestos";
-
-
 
 	/* RECAUDACION MICROSERVICE */
 	public List<Object> sinCobrarByCuenta(Long cuenta) {
