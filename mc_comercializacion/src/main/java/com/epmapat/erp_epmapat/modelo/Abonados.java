@@ -6,10 +6,9 @@ import jakarta.persistence.*;
 import lombok.*;
 
 @Entity
-@Setter
 @Getter
+@Setter
 @NoArgsConstructor
-@AllArgsConstructor
 @Table(name = "abonados")
 public class Abonados {
 
@@ -65,5 +64,6 @@ public class Abonados {
 	private Boolean municipio;
 	private Boolean swalcantarillado;
 	private Long promedio;
+
 
 }
