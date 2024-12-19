@@ -21,7 +21,7 @@ public class RecaudacionMicroservice {
 	private RestTemplate restTemplate;
 	@Autowired
 	private MicroserviceConfig config;
-	String mcrecaudacion = "mcr_ecaudacion:8082";
+	String mcrecaudacion = "mc_recaudacion:8082";
 	private final String URL_FACTURA = "http://"+mcrecaudacion+"/facturas";
 	private final String URL_CAJA = "http://"+mcrecaudacion+"/cajas";
 	private final String URL_INTERES = "http://"+mcrecaudacion+"/interes";
