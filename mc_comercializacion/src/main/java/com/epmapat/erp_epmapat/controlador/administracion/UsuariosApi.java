@@ -21,8 +21,7 @@ import com.epmapat.erp_epmapat.servicio.administracion.UsuarioServicio;
 
 @RestController
 @RequestMapping("/usuarios")
-@CrossOrigin(origins = "*")
-
+@CrossOrigin("*")
 public class UsuariosApi {
 
    @Autowired

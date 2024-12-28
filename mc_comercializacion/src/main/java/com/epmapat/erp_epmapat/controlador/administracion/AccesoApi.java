@@ -13,8 +13,7 @@ import com.epmapat.erp_epmapat.servicio.administracion.AccesoServicio;
 
 @RestController
 @RequestMapping("/acceso")
-@CrossOrigin(origins = "*")
-
+@CrossOrigin("*")
 public class AccesoApi {
 
    @Autowired
