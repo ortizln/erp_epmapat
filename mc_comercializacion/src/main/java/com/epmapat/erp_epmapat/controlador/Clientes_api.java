@@ -19,7 +19,7 @@ public class Clientes_api {
     private Clientes_ser s_clietnes; 
     
     @GetMapping
-    ResponseEntity<List<Long>> getAll(){
+    ResponseEntity<List<Clientes>> getAll(){
         return ResponseEntity.ok(s_clietnes.findAll());
     }
 }
