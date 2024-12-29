@@ -1,7 +1,6 @@
 package com.epmapat.erp_epmapat.modelo;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -16,6 +15,8 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @Table(name="tpidentifica")
 public class Tpidentifica {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idtpidentifica;
     private String codigo;
     private String nombre;
