@@ -27,10 +27,16 @@ public class Clientes {
     private Long estado;
     private String email;
     private Long usucrea;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "idnacionalidad_nacionalidad")
     private Nacionalidad idnacionalidad_nacionalidad;
     private LocalDate feccrea;
     private Long usumodi;
     private LocalDate fecmodi;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "idpjuridica_personeriajuridica")
     private Personeriajuridica idpjuridica_personeriajuridica;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "idtpidentifica_tpidentifica")
     private Tpidentifica idtpidentifica_tpidentifica;
 }
