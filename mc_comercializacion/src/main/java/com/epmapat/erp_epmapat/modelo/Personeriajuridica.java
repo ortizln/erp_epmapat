@@ -7,15 +7,14 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Getter
 @Setter
+@Getter
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name="nacionalidad")
-public class Nacionalidad {
+@Table(name = "personeriajuridica")
+public class Personeriajuridica {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idnacionalidad;
+    private Long idpjuridica;
     private String descripcion;
-
 }
