@@ -7,14 +7,19 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class Clientes_ser {
     @Autowired
     private Clientes_rep dao;
 
-    public List<Clientes> findAll(){
+    public List<Clientes_dto> findAll(){
         return dao.findAll();
+    }
+
+    public Optional<Clientes_dto> findById(Long idcliente){
+        return dao.findById(idcliente);
     }
 
 }
