@@ -1,5 +1,6 @@
 package com.epmapat.erp_epmapat.controlador;
 
+import com.epmapat.erp_epmapat.DTO.Clientes_dto;
 import com.epmapat.erp_epmapat.modelo.Clientes;
 import com.epmapat.erp_epmapat.servicio.Clientes_ser;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +20,7 @@ public class Clientes_api {
     private Clientes_ser s_clietnes; 
     
     @GetMapping
-    ResponseEntity<List<Clientes>> getAll(){
+    ResponseEntity<List<Clientes_dto>> getAll(){
         return ResponseEntity.ok(s_clietnes.findAll());
     }
 }
