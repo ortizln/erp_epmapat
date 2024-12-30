@@ -13,7 +13,7 @@ public class Clientes_ser {
     @Autowired
     private Clientes_rep dao;
 
-    public List<Clientes_dto> findAll(){
+    public List<Clientes> findAll(){
         return dao.findAll();
     }
 

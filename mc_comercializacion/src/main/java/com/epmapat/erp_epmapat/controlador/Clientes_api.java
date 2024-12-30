@@ -20,7 +20,7 @@ public class Clientes_api {
     private Clientes_ser s_clietnes; 
     
     @GetMapping
-    ResponseEntity<List<Clientes_dto>> getAll(){
+    ResponseEntity<List<Clientes>> getAll(){
         return ResponseEntity.ok(s_clietnes.findAll());
     }
 }
