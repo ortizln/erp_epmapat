@@ -2,6 +2,7 @@ package com.epmapat.erp_epmapat.controlador;
 
 import com.epmapat.erp_epmapat.DTO.Clientes_dto;
 import com.epmapat.erp_epmapat.excepciones.ResourceNotFoundExcepciones;
+import com.epmapat.erp_epmapat.interfaces.CVClientes;
 import com.epmapat.erp_epmapat.modelo.Clientes;
 import com.epmapat.erp_epmapat.servicio.Clientes_ser;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -159,7 +160,7 @@ public class Clientes_api {
     }
 
     @GetMapping("/reportes/carteravencida")
-    ResponseEntity<List<Clientes_dto>> getCVByCliente(
+    ResponseEntity<List<CVClientes>> getCVByCliente(
             @RequestParam @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate fecha) {
         return ResponseEntity.ok(s_clietnes.getCVByCliente(fecha));
     }

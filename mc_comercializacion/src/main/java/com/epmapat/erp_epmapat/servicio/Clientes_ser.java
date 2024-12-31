@@ -1,6 +1,7 @@
 package com.epmapat.erp_epmapat.servicio;
 
 import com.epmapat.erp_epmapat.DTO.Clientes_dto;
+import com.epmapat.erp_epmapat.interfaces.CVClientes;
 import com.epmapat.erp_epmapat.modelo.Clientes;
 import com.epmapat.erp_epmapat.repositorio.Clientes_rep;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -66,7 +67,7 @@ public class Clientes_ser {
         return dao.totalClientes();
     }
 
-    public List<Clientes_dto> getCVByCliente(LocalDate fecha) {
+    public List<CVClientes> getCVByCliente(LocalDate fecha) {
         return dao.getCVByCliente(fecha);
     }
 

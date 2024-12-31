@@ -1,6 +1,7 @@
 package com.epmapat.erp_epmapat.repositorio;
 
 import com.epmapat.erp_epmapat.DTO.Clientes_dto;
+import com.epmapat.erp_epmapat.interfaces.CVClientes;
 import com.epmapat.erp_epmapat.modelo.Clientes;
 import jakarta.transaction.Transactional;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -56,5 +57,5 @@ public interface Clientes_rep extends JpaRepository<Clientes, Long> {
             +" where f.totaltarifa > 0 and (( (f.estado = 1 or f.estado = 2) and ( f.fechacobro > '2024-11-20' or f.fechacobro is null)) or f.estado = 3 )"
             +" and f.fechaconvenio is null and f.fechaeliminacion is null"
             +" group by rf.idfactura_facturas, c.nombre, c.cedula , c.direccion , c.email, m.descripcion order by c.nombre asc", nativeQuery = true)
-    List<Clientes_dto>getCVByCliente(LocalDate fecha);
+    List<CVClientes>getCVByCliente(LocalDate fecha);
 }
