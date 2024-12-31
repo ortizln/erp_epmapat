@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: mc_login
+  cloud:
+    config:
+      enabled: true
+      uri: http://localhost:8080
+  jpa:
+    database: POSTGRESQL
+    show-sql: false
+  datasource:
+    url: jdbc:postgresql://localhost:5432/ErpEpmapaT
+    username: postgres
+    password: 12345
