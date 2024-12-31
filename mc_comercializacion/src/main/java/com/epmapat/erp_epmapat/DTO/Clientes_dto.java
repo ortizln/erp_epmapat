@@ -1,11 +1,13 @@
 package com.epmapat.erp_epmapat.DTO;
 
 
+import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDate;
+@Data
 @Getter
 @Setter
 public class Clientes_dto {
