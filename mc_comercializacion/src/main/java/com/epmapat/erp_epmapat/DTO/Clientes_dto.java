@@ -1,15 +1,14 @@
 package com.epmapat.erp_epmapat.DTO;
 
 
-import lombok.Data;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.time.LocalDate;
 @Data
 @Getter
 @Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Clientes_dto {
     private Long idcliente;
     private String cedula;
