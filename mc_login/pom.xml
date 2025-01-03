@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.epmapat</groupId>
 	<artifactId>login</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>api</version>
 	<name>login</name>
 	<description>Microservicio de login</description>
 	<url/>
@@ -66,16 +66,6 @@
 			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
 			<version>4.2.0</version>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-security
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-security</artifactId>
-		</dependency>-->
-		<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-configuration-processor
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-configuration-processor</artifactId>
-		</dependency>-->
 		<!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-config -->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
@@ -88,6 +78,12 @@
 			<artifactId>spring-cloud-starter-bootstrap</artifactId>
 			<version>4.2.0</version>
 		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+			<version>6.0.12</version> <!-- Match your Spring Boot version -->
+		</dependency>
+
 
 	</dependencies>
 	<dependencyManagement>
@@ -102,7 +98,7 @@
 			<dependency>
 				<groupId>org.springframework.cloud</groupId>
 				<artifactId>spring-cloud-dependencies</artifactId>
-				<version>2022.0.4</version> <!-- Or the compatible version -->
+				<version>2022.0.4</version>  Or the compatible version -->
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
