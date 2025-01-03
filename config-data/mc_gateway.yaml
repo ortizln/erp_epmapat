@@ -18,5 +18,5 @@ spring:
         - id: mc_recaudacion
           uri: lb://mc_recaudacion
           predicates: 
-            - Path=//cajas/**
+            - Path=/cajas/**
 
