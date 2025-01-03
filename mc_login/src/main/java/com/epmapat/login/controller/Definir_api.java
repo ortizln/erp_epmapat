@@ -1,5 +1,6 @@
 package com.epmapat.login.controller;
 
+import com.epmapat.login.exceptions.ResourceNotFoundExcepciones;
 import com.epmapat.login.model.Definir;
 import com.epmapat.login.service.Definir_ser;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +23,7 @@ public class Definir_api {
 
     @PutMapping("/{iddefinir}")
     public ResponseEntity<Definir> update(@PathVariable Long iddefinir, @RequestBody Definir x) {
-        Definir y = defServicio.findById(iddefinir).orElseThrow();
+        Definir y = defServicio.findById(iddefinir).orElseThrow(()-> new ResourceNotFoundExcepciones("No encontrado"));
         y.setRazonsocial(x.getRazonsocial());
         y.setNombrecomercial(x.getNombrecomercial());
         y.setRuc(x.getRuc());
