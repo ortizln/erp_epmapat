@@ -12,7 +12,6 @@ import java.time.ZonedDateTime;
 @Getter
 @Setter
 @NoArgsConstructor
-@AllArgsConstructor
 @Table(name = "documentos")
 public class Documentos {
     @Id
