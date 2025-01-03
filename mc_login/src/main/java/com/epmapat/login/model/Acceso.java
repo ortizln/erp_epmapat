@@ -20,4 +20,42 @@ public class Acceso {
     private String nomacc;
     private Integer regacc;
 
+    public Acceso(Long idacc, String codacc, String nomacc, Integer regacc) {
+        this.idacc = idacc;
+        this.codacc = codacc;
+        this.nomacc = nomacc;
+        this.regacc = regacc;
+    }
+
+    public Long getIdacc() {
+        return idacc;
+    }
+
+    public void setIdacc(Long idacc) {
+        this.idacc = idacc;
+    }
+
+    public String getCodacc() {
+        return codacc;
+    }
+
+    public void setCodacc(String codacc) {
+        this.codacc = codacc;
+    }
+
+    public String getNomacc() {
+        return nomacc;
+    }
+
+    public void setNomacc(String nomacc) {
+        this.nomacc = nomacc;
+    }
+
+    public Integer getRegacc() {
+        return regacc;
+    }
+
+    public void setRegacc(Integer regacc) {
+        this.regacc = regacc;
+    }
 }
