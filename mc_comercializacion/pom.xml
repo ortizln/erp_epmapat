@@ -10,9 +10,9 @@
 		<!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.epmapat</groupId>
-	<artifactId>comercializacion</artifactId>
+	<artifactId>mc_comercializacion</artifactId>
 	<version>api</version>
-	<name>comercializacion</name>
+	<name>mc_comercializacion</name>
 	<description>Microservicio comercializacion</description>
 	<properties>
 		<java.version>17</java.version>

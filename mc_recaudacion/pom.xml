@@ -10,9 +10,9 @@
 		<!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.microservicio</groupId>
-	<artifactId>recaudacion</artifactId>
+	<artifactId>mc_recaudacion</artifactId>
 	<version>api</version>
-	<name>recaudacion</name>
+	<name>mc_recaudacion</name>
 	<description>Microservicio de recaudación</description>
 	<url/>
 	<licenses>

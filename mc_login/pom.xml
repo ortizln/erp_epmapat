@@ -11,9 +11,9 @@
 	</parent>
 
 	<groupId>com.epmapat</groupId>
-	<artifactId>login</artifactId>
+	<artifactId>mc_login</artifactId>
 	<version>api</version>
-	<name>login</name>
+	<name>mc_login</name>
 	<description>Microservicio de login</description>
 
 	<properties>
