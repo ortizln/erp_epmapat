@@ -10,6 +10,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "colores")
 public class Colores {
     @Id
