@@ -1,6 +1,6 @@
 spring:
     application:
-        name: mc_gateway
+        name: gateway
     cloud:
         config:
             enabled: true
