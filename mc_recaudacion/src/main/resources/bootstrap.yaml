@@ -12,8 +12,3 @@ spring:
         url: jdbc:postgresql://localhost:5432/ErpEpmapaT
         username: postgres
         password: 12345
-
-logging:
-    level:
-        org.springframework.cloud.gateway: DEBUG
-        reactor.netty.http.client: DEBUG
