@@ -18,11 +18,6 @@ spring:
           enabled: true
       routes:
       - id: mc_recaudacion
-        uri: lb://http://localhost:8001
+        uri: lb://mc_recaudacion
         predicates:
         - Path=/cajas/**
-logging:
-  level:
-    org.springframework.cloud.gateway: DEBUG
-    org.springframework.cloud.loadbalancer: DEBUG
-    com.netflix.eureka: DEBUG
