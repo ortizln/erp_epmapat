@@ -5,10 +5,4 @@ spring:
     config:
       enabled: true
       uri: http://localhost:8081
-  jpa:
-    database: POSTGRESQL
-    show-sql: true
-  datasource:
-    url: jdbc:postgresql://localhost:5432/ErpEpmapaT
-    username: postgres
-    password: 12345
+
