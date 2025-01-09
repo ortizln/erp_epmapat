@@ -4,8 +4,5 @@ spring:
   cloud:
     config:
       enabled: true
-            uri: http://localhost:8081
-logging:
-    level:
-        org.springframework.cloud.gateway: DEBUG
-        reactor.netty.http.client: DEBUG
+      uri: http://localhost:8081
+
