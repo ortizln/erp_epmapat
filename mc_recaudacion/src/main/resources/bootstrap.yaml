@@ -1,14 +1,14 @@
 spring:
-    application:
-        name: mc_recaudacion
-    cloud:
-        config:
-            enabled: true
-            uri: http://localhost:8081
-    jpa:
-        database: POSTGRESQL
-        show-sql: false
-    datasource:
-        url: jdbc:postgresql://localhost:5432/ErpEpmapaT
-        username: postgres
-        password: 12345
+  application:
+    name: mc_recaudacion
+  cloud:
+    config:
+      enabled: true
+      uri: http://localhost:8081
+  jpa:
+    database: POSTGRESQL
+    show-sql: false
+  datasource:
+    url: jdbc:postgresql://localhost:5432/ErpEpmapaT
+    username: postgres
+    password: 12345
