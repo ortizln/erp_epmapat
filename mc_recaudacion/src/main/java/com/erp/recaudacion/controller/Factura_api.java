@@ -4,8 +4,6 @@ import com.erp.recaudacion.interfaces.Interes_int;
 import com.erp.recaudacion.interfaces.LastConection_int;
 import com.erp.recaudacion.model.*;
 import com.erp.recaudacion.service.*;
-import com.microservicio.recaudacion.model.*;
-import com.microservicio.recaudacion.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
