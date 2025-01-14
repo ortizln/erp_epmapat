@@ -1,6 +1,11 @@
 spring:
   application:
     name: mc_recaudacion
+  cloud:
+    loadbalancer:
+      ribbon:
+        enabled: true
+
 server:
   port: ${PORT:${SERVER_PORT:0}}
 eureka:
