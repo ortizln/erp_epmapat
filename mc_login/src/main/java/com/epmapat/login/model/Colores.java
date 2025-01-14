@@ -20,5 +20,5 @@ public class Colores {
     private String nombrecss;
     private String hexadecimal;
     private String rgb;
-    
+
 }
