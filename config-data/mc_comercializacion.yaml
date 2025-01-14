@@ -1,3 +1,6 @@
+spring:
+  application:
+    name: mc_comercializacion
 server:
   port: ${PORT:${SERVER_PORT:0}}
 eureka:
