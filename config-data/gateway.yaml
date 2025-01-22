@@ -18,7 +18,7 @@ spring:
           enabled: true
       routes:
       - id: mc_recaudacion
-        uri: http://mc_recaudacion
+        uri: http://localhost:54972/
         predicates:
         - Path=/cajas/**
 
