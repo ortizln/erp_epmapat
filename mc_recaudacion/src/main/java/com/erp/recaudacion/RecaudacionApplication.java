@@ -10,11 +10,6 @@ import org.springframework.web.client.RestTemplate;
 @SpringBootApplication
 @EnableDiscoveryClient
 public class RecaudacionApplication {
-	@Bean
-	@LoadBalanced
-	public RestTemplate restTemplate(){
-		return new RestTemplate();
-	}
 	public static void main(String[] args) {
 		SpringApplication.run(RecaudacionApplication.class, args);
 	}
