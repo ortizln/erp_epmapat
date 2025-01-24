@@ -13,5 +13,5 @@ eureka:
     service-url:
       default-zone: http://localhost:8761/eureka
   instance:
-    hostname: mc_recaudacion
-    instance-id: ${spring.application.name}:${random.value}
+    name: mc_recaudacion
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
