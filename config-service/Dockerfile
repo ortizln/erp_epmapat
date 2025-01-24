@@ -1,4 +1,4 @@
-FROM openjdk:21-jdk-slim
+FROM openjdk:17-jdk-slim
 LABEL authors="Alexis Ortiz"
 ARG JAR_FILE=target/config-service-1.0.jar
 COPY ${JAR_FILE} app_config_server.jar
