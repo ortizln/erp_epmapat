@@ -9,3 +9,6 @@ services:
     ports:
       - 8761:8761
     restart: always
+    depends_on:
+      config-service:
+          condition: service_healthy
