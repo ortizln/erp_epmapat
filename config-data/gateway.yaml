@@ -10,7 +10,6 @@ eureka:
   instance:
     hostname: localhost
 
-
 spring:
   cloud:
     gateway:
@@ -19,6 +18,6 @@ spring:
           enabled: true
       routes:
         - id: mc_recaudacion
-          uri: lb://mc_recaudacion
+          uri: http://localhost:5104
           predicates:
             - Path=/cajas/**
