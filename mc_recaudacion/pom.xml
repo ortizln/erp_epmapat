@@ -11,7 +11,7 @@
 	</parent>
 	<groupId>com.erp</groupId>
 	<artifactId>mc_recaudacion</artifactId>
-	<version>api</version>
+	<version>1.0</version>
 	<name>mc_recaudacion</name>
 	<description>Microservicio de recaudación</description>
 	<url/>

@@ -9,3 +9,13 @@ services:
     ports:
       - 8761:8761
     restart: always
+  gateway:
+    build: gateway
+    ports:
+      - 8082:8082
+    restart: always
+  mc_recaudacion:
+    build: mc_recaudacion
+    ports:
+      - 8002:8002
+    restart: always
