@@ -6,9 +6,9 @@ eureka:
     fetch-registry: true
     register-with-eureka: true
     service-url:
-      default-zone: http://192.168.100.16:8761/eureka
+      default-zone: http://eureka:8761/eureka
   instance:
-    hostname: localhost
+    hostname: gateway
 
 spring:
   cloud:
@@ -18,6 +18,6 @@ spring:
           enabled: true
       routes:
       - id: mc_recaudacion
-        uri: http://192.168.100.16:8002
+        uri: http://mc_recaudacion:8002
         predicates:
         - Path=/cajas/**
