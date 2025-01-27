@@ -4,4 +4,4 @@ spring:
   cloud:
     config:
       enabled: true
-      uri: http://192.168.100.16:8081
+      uri: http://config-service:8081
