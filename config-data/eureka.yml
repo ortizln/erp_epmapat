@@ -1,14 +1,13 @@
 spring:
   application:
     name: eureka
-server:
-  port: 8761
 eureka:
+  instance:
+    hostname: 192.168.100.16
   client:
     register-with-eureka: false
     fetch-registry: false
     service-url:
-      default-zone: http://192.168.100.16:${server.port}/eureka
-  instance:
-    hostname: 192.168.100.16
+      default-zone: http://192.168.100.16:8761/eureka
+
 
