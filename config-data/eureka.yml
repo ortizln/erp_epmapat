@@ -6,7 +6,7 @@ server:
 
 eureka:
   instance:
-    hostname: 192.168.100.16
+    hostname: http://192.168.100.16
     prefer-ip-address: true
   client:
     register-with-eureka: false

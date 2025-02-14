@@ -8,4 +8,5 @@ eureka:
     service-url:
       default-zone: http://192.168.100.16:8761/eureka
   instance:
-    instance-id: ${spring.application.name}:${spring.application.instance_id:${server.port}}
+    prefer-ip-address: true  # Asegura que se registre con la IP en vez del hostname
+    instance-id: ${spring.application.name}:${server.port}
