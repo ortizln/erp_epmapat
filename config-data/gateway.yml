@@ -8,6 +8,9 @@ eureka:
     registry-fetch-interval-seconds: 10
     service-url:
       defaultZone: http://eureka:8761/eureka/  # Usa el nombre del servicio Eureka (recomendado)
+  instance:
+    instance-id: ${spring.application.name}:${server.port}
+    hostname: ${spring.application.name}
 
 spring:
   cloud:
@@ -17,6 +20,6 @@ spring:
           enabled: true  # Habilita el discovery locator
       routes:
         - id: mc_recaudacion
-          uri: http://mc_recaudacion:8002 # Usa el nombre del servicio mc_recaudacion con lb://
+          uri: lb://mc_recaudacion:8002 # Usa el nombre del servicio mc_recaudacion con lb://
           predicates:
             - Path=/cajas/**
