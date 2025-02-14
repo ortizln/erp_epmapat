@@ -1,40 +1,58 @@
+version: "3.9"  # Especifica una versión de docker-compose (recomendado)
+
 services:
   config-service:
     build: config-service
-    image: config-service
+    image: config-service  # No es necesario repetir el nombre de la imagen si es el mismo que el del build context
     container_name: config-service
     ports:
-      - 8081:8081
+      - "8081:8081" # Usa comillas para los puertos (buena práctica)
     restart: always
     networks:
       - epmapat-network
+    depends_on:  # Asegura que Eureka esté arriba antes que config-service
+      - eureka
+
   eureka:
     build: eureka
-    image: eureka:latest
+    image: eureka:latest  # Si quieres usar una imagen específica, puedes usar una etiqueta (ej: eureka:1.0.0)
     container_name: eureka
     ports:
-      - 8761:8761
+      - "8761:8761" # Usa comillas para los puertos
     restart: always
     networks:
       - epmapat-network
+    environment:  # Configuración de Eureka (importante)
+      EUREKA_INSTANCE_HOSTNAME: eureka  # Usa el nombre del servicio dentro de la red docker
+
   gateway:
     build: gateway
-    image: gateway:latest
+    image: gateway:latest # Si quieres usar una imagen específica, puedes usar una etiqueta (ej: gateway:1.0.0)
     container_name: gateway
     ports:
-      - 8082:8082
+      - "8082:8082" # Usa comillas para los puertos
     restart: always
     networks:
       - epmapat-network
+    depends_on:  # Asegura que Eureka esté arriba antes que gateway
+      - eureka
+    environment: # Configuración de gateway (si es necesario)
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eureka:8761/eureka/
+
   mc_recaudacion:
     build: mc_recaudacion
-    image: mc_recaudacion
+    image: mc_recaudacion # Si quieres usar una imagen específica, puedes usar una etiqueta (ej: mc_recaudacion:1.0.0)
     container_name: mc_recaudacion
     ports:
-      - 8002:8002
+      - "8002:8002" # Usa comillas para los puertos
     restart: always
     networks:
       - epmapat-network
+    depends_on: # Asegura que Eureka esté arriba antes que mc_recaudacion
+      - eureka
+    environment: # Configuración de mc_recaudacion (si es necesario)
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eureka:8761/eureka/
+
 networks:
   epmapat-network:
     driver: bridge
