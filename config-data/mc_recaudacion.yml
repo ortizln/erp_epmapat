@@ -1,12 +1,18 @@
 server:
   port: 8002
+
+spring:
+  application:
+    name: mc_recaudacion  # Nombre de tu microservicio
+
 eureka:
   client:
     fetch-registry: true
     register-with-eureka: true
-    registry-fetch-interval-seconds: 10 # Retry interval
+    registry-fetch-interval-seconds: 10
     service-url:
-      default-zone: http://192.168.100.16:8761/eureka
+      defaultZone: http://eureka:8761/eureka/
   instance:
-    prefer-ip-address: true  # Asegura que se registre con la IP en vez del hostname
+    prefer-ip-address: true
     instance-id: ${spring.application.name}:${server.port}
+    hostname: ${spring.application.name}

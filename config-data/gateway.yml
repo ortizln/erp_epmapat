@@ -5,18 +5,18 @@ eureka:
   client:
     fetch-registry: true
     register-with-eureka: true
-    registry-fetch-interval-seconds: 10 # Retry interval
+    registry-fetch-interval-seconds: 10
     service-url:
-      default-zone: http://192.168.100.16:8761/eureka
+      defaultZone: http://eureka:8761/eureka/  # Usa el nombre del servicio Eureka (recomendado)
 
 spring:
   cloud:
     gateway:
       discovery:
         locator:
-          enabled: true
+          enabled: true  # Habilita el discovery locator
       routes:
-      - id: mc_recaudacion
-        uri: http://192.168.100.16:8002
-        predicates:
-        - Path=/cajas/**
+        - id: mc_recaudacion
+          uri: lb://mc_recaudacion  # Usa el nombre del servicio mc_recaudacion con lb://
+          predicates:
+            - Path=/cajas/**
