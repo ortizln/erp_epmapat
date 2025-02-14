@@ -6,12 +6,10 @@ server:
 
 eureka:
   instance:
-    hostname: 192.168.100.16
+    hostname: eureka  # El nombre del servicio Eureka (crucial para Docker)
     prefer-ip-address: true
   client:
     register-with-eureka: false
     fetch-registry: false
     service-url:
-      default-zone: http://eureka:${server.port}/eureka
-
-
+      defaultZone: http://eureka:8761/eureka/  # El nombre del servicio Eureka
