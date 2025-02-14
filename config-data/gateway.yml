@@ -17,6 +17,6 @@ spring:
           enabled: true  # Habilita el discovery locator
       routes:
         - id: mc_recaudacion
-          uri: http://mcrecaudacion:8002 # Usa el nombre del servicio mc_recaudacion con lb://
+          uri: http://mc_recaudacion:8002 # Usa el nombre del servicio mc_recaudacion con lb://
           predicates:
             - Path=/cajas/**
