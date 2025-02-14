@@ -10,8 +10,6 @@ services:
     restart: always
     networks:
       - epmapat-network
-    depends_on:  # Asegura que Eureka esté arriba antes que config-service
-      - eureka
 
   eureka:
     build: eureka
