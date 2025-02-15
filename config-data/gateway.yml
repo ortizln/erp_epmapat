@@ -20,6 +20,6 @@ spring:
           enabled: true  # Habilita el discovery locator
       routes:
         - id: mc_recaudacion
-          uri: lb://mc_recaudacion
+          uri: 192.168.100.16:8002
           predicates:
             - Path=/cajas/**
