@@ -1,10 +1,6 @@
 server:
   port: 8002
 
-spring:
-  application:
-    name: mc_recaudacion  # Nombre de tu microservicio
-
 eureka:
   client:
     fetch-registry: true
