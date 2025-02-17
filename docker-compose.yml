@@ -1,59 +1,76 @@
-version: "3.9"  # Especifica una versión de docker-compose (recomendado)
+version: "3.9"
 
 services:
   config-service:
     build: config-service
-    image: config-service  # No es necesario repetir el nombre de la imagen si es el mismo que el del build context
+    image: config-service
     container_name: config-service
     ports:
-      - "8081:8081" # Usa comillas para los puertos (buena práctica)
+      - "8081:8081"
     restart: always
     networks:
       - epmapat-network
 
   eureka:
     build: eureka
-    image: eureka:latest  # Si quieres usar una imagen específica, puedes usar una etiqueta (ej: eureka:1.0.0)
+    image: eureka:latest
     container_name: eureka
     ports:
-      - "8761:8761" # Usa comillas para los puertos
+      - "8761:8761"
     restart: always
     networks:
       - epmapat-network
-    environment:  # Configuración de Eureka (importante)
-      EUREKA_INSTANCE_HOSTNAME: eureka  # Usa el nombre del servicio dentro de la red docker
-  
+    environment:
+      EUREKA_INSTANCE_HOSTNAME: eureka
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8761/actuator/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
 
   gateway:
     build: gateway
-    image: gateway:latest # Si quieres usar una imagen específica, puedes usar una etiqueta (ej: gateway:1.0.0)
+    image: gateway:latest
     container_name: gateway
     ports:
-      - "8082:8082" # Usa comillas para los puertos
+      - "8082:8082"
     restart: always
     networks:
       - epmapat-network
-    depends_on:  # Asegura que Eureka esté arriba antes que gateway
+    depends_on:
       - eureka
-    environment: # Configuración de gateway (si es necesario)
+    environment:
       EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eureka:8761/eureka
 
   mc_recaudacion:
     build: mc_recaudacion
-    image: mc_recaudacion:latest # Si quieres usar una imagen específica, puedes usar una etiqueta (ej: mc_recaudacion:1.0.0)
+    image: mc_recaudacion:latest
     container_name: mc_recaudacion
     ports:
-      - "8002:8002" # Usa comillas para los puertos
+      - "8002:8002"
     restart: always
     networks:
       - epmapat-network
-    depends_on: # Asegura que Eureka esté arriba antes que mc_recaudacion
+    depends_on:
       - eureka
-    environment: # Configuración de mc_recaudacion (si es necesario)
+    environment:
       EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eureka:8761/eureka
-      DB: jdbc:postgresql://192.168.0.87:5432/ErpEpmapaT
+      DB: jdbc:postgresql://postgres:5432/ErpEpmapaT
       USERNAME: postgres
       PASS: 086411421
+
+  postgres:
+    image: postgres:13
+    container_name: postgres
+    environment:
+      POSTGRES_DB: ErpEpmapaT
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 086411421
+    ports:
+      - "5432:5432"
+    networks:
+      - epmapat-network
+
 networks:
   epmapat-network:
     driver: bridge
