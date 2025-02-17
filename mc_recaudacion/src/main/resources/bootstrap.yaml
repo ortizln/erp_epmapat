@@ -10,5 +10,5 @@ spring:
     show-sql: false
   datasource:
     url: ${DB}
-    username: postgres
-    password: 086411421
+    username: ${USERNAME}
+    password: ${PASS}
