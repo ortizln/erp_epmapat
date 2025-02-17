@@ -35,11 +35,11 @@ services:
     depends_on:  # Asegura que Eureka esté arriba antes que gateway
       - eureka
     environment: # Configuración de gateway (si es necesario)
-      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eureka:8761/eureka/
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eureka:8761/eureka
 
   mc_recaudacion:
     build: mc_recaudacion
-    image: mc_recaudacion # Si quieres usar una imagen específica, puedes usar una etiqueta (ej: mc_recaudacion:1.0.0)
+    image: mc_recaudacion:latest # Si quieres usar una imagen específica, puedes usar una etiqueta (ej: mc_recaudacion:1.0.0)
     container_name: mc_recaudacion
     ports:
       - "8002:8002" # Usa comillas para los puertos
@@ -49,8 +49,7 @@ services:
     depends_on: # Asegura que Eureka esté arriba antes que mc_recaudacion
       - eureka
     environment: # Configuración de mc_recaudacion (si es necesario)
-      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eureka:8761/eureka/
-
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eureka:8761/eureka
 networks:
   epmapat-network:
     driver: bridge

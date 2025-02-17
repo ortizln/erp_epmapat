@@ -7,7 +7,7 @@ eureka:
     register-with-eureka: true
     registry-fetch-interval-seconds: 10
     service-url:
-      defaultZone: http://eureka:8761/eureka/
+      defaultZone: http://eureka:8761/eureka
   instance:
     instance-id: ${spring.application.name}:${server.port}
     hostname: ${spring.application.name}
