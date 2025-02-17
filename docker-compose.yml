@@ -22,6 +22,7 @@ services:
       - epmapat-network
     environment:  # Configuración de Eureka (importante)
       EUREKA_INSTANCE_HOSTNAME: eureka  # Usa el nombre del servicio dentro de la red docker
+  
 
   gateway:
     build: gateway
@@ -50,6 +51,9 @@ services:
       - eureka
     environment: # Configuración de mc_recaudacion (si es necesario)
       EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eureka:8761/eureka
+      DB: jdbc:postgresql://192.168.0.87:5432/ErpEpmapaT
+      USERNAME: postgres
+      PASS: 086411421
 networks:
   epmapat-network:
     driver: bridge

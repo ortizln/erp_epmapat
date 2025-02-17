@@ -9,6 +9,6 @@ spring:
     database: POSTGRESQL
     show-sql: false
   datasource:
-    url: jdbc:postgresql://192.168.100.16:5432/ErpEpmapaT
+    url: ${DB}
     username: postgres
     password: 086411421
