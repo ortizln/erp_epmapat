@@ -4,22 +4,46 @@ server:
 eureka:
   client:
     fetch-registry: true
-    register-with-eureka: true
+    register-with-eureka: true  # Gateway doesn't need to register itself
     registry-fetch-interval-seconds: 10
     service-url:
-      defaultZone: http://eureka:8761/eureka # Usa el nombre del servicio Eureka (recomendado)
+      defaultZone: http://eureka:8761/eureka
   instance:
     instance-id: ${spring.application.name}:${server.port}
-    hostname: ${spring.application.name}
 
 spring:
   cloud:
     gateway:
       discovery:
         locator:
-          enabled: true  # Habilita el discovery locator
+          enabled: true  # Enable dynamic routing based on service names
+          lower-case-service-id: true  # Use lowercase service IDs for consistency
       routes:
         - id: mc_recaudacion
-          uri: http://mc_recaudacion:8002
+          uri: lb://mc_recaudacion  # Use 'lb://' for load balancing
           predicates:
             - Path=/cajas/**
+      httpclient:
+        connect-timeout: 1000  # Connection timeout in milliseconds
+        response-timeout: 5s   # Response timeout
+      default-filters:
+        - name: Retry
+          args:
+            retries: 3
+            statuses: BAD_GATEWAY, SERVICE_UNAVAILABLE
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+
+logging:
+  level:
+    root: INFO
+    org.springframework.cloud.gateway: DEBUG
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"

@@ -1,15 +1,28 @@
-spring:
-  application:
-    name: eureka
 server:
   port: 8761
 
 eureka:
   instance:
-    hostname: eureka  # El nombre del servicio Eureka (crucial para Docker)
-    prefer-ip-address: true
+    hostname: eureka
   client:
     register-with-eureka: false
     fetch-registry: false
     service-url:
-      defaultZone: http://eureka:8761/eureka/  # El nombre del servicio Eureka
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+
+logging:
+  level:
+    root: INFO
+    org.springframework.cloud.netflix.eureka: INFO
+    com.netflix.eureka: WARN
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"
