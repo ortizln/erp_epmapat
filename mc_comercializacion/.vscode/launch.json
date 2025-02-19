@@ -1,0 +1,28 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "ComercializacionApplication",
+            "request": "launch",
+            "mainClass": "ComercializacionApplication",
+            "projectName": "erp_epmapat"
+        },
+        {
+            "type": "java",
+            "name": "ComercializacionApplication",
+            "request": "launch",
+            "mainClass": "com.epmapat.erp_epmapat.ComercializacionApplication",
+            "projectName": "erp_epmapat"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-ErpEpmapatApplication<erp_epmapat>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.epmapat.erp_epmapat.ErpEpmapatApplication",
+            "projectName": "erp_epmapat",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
