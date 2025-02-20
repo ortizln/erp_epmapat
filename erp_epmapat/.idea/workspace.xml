@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="13dd9c78-9c27-4128-9441-e58fd9bece78" name="Changes" comment="" />
+    <list default="true" id="13dd9c78-9c27-4128-9441-e58fd9bece78" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/config/target/classes/config-data/msvc-eureka.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/target/classes/config-data/msvc-gateway.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/target/classes/config-data/msvc-login.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/target/classes/config-data/msvc-recaudacion.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/target/test-classes/com/erp/config/ConfigApplicationTests.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mc_comercializacion/.settings/org.eclipse.core.resources.prefs" beforeDir="false" afterPath="$PROJECT_DIR$/../mc_comercializacion/.settings/org.eclipse.core.resources.prefs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mc_recaudacion/.settings/org.eclipse.core.resources.prefs" beforeDir="false" afterPath="$PROJECT_DIR$/../mc_recaudacion/.settings/org.eclipse.core.resources.prefs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -43,7 +51,7 @@
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "comercializacion",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/ERP/erp_epmapat/erp_epmapat"
+    "last_opened_file_path": "C:/ERP/erp_epmapat_v2.0"
   }
 }]]></component>
   <component name="RecentsManager">
